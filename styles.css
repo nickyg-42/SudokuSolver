@@ -1,0 +1,26 @@
+* {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+body {
+    background-color: black;
+    color: white;
+    background-image: url("dark_background.webp");
+}
+
+button {
+    cursor: pointer;
+    height: 30px;
+    width: 90px;
+    background-color: white;
+}
+
+input {
+    color: white;
+    background-color: black;
+}
+
+.hoverInfo {
+    font-style: italic;
+}
