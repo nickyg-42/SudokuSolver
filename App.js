@@ -1,15 +1,15 @@
 let solvedArr =  [[]];
 
 let exampleBoard = [
-    0,0,0,6,0,0,1,0,7,
-    6,8,0,9,5,1,3,0,0,
-    0,0,3,0,0,2,5,6,8,
-    0,4,0,8,1,0,0,2,0,
-    0,0,0,0,0,0,8,5,0,
-    0,9,0,0,6,5,0,7,3,
-    4,0,9,0,0,3,0,8,5,
-    1,6,2,0,0,9,0,3,0,
-    5,0,0,7,0,6,0,0,0
+    null, null,null,6,null,null,1,null,7,
+    6,8,null,9,5,1,3,null,null,
+    null,null,3,null,null,2,5,6,8,
+    null,4,null,8,1,null,null,2,null,
+    null,null,null,null,null,null,8,5,null,
+    null,9,null,null,6,5,null,7,3,
+    4,null,9,null,null,3,null,8,5,
+    1,6,2,null,null,9,null,3,null,
+    5,null,null,7,null,6,null,null,null
 ];
 
 const buttons = document.querySelectorAll('button');
@@ -19,6 +19,18 @@ buttons.forEach(btn => btn.addEventListener("mouseout", removeHoverInfo));
 buttons[0].addEventListener("mouseover", displayHoverBtn1);
 buttons[1].addEventListener("mouseover", displayHoverBtn2);
 buttons[2].addEventListener("mouseover", displayHoverBtn3);
+
+const cells = document.querySelectorAll('input');
+
+cells.forEach(cell => cell.addEventListener('keydown', (e) => {
+    var regex = new RegExp('[0-9]');
+
+    if (e.ctrlKey || e.altKey || typeof e.key !== 'string' || e.key.length !== 1) return;
+
+    if (!regex.test(e.key)) {
+        e.preventDefault();
+    }
+}));
 
 function removeHoverInfo() {
     let text = document.querySelector(".hoverInfo")
